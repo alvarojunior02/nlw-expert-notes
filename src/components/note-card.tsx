@@ -39,7 +39,7 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
 
       <Dialog.Portal>
         <Dialog.Overlay className='inset-0 fixed bg-black/50' />
-        <Dialog.Content className='fixed overflow-hidden inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md:h-[60vh] bg-slate-700 md:rounded-md flex flex-col outline-none'>
+        <Dialog.Content className='fixed overflow-hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[640px] md:w-full w-3/4 h-[75vh] bg-slate-700 rounded-md flex flex-col outline-none'>
           <Dialog.Close className='absolute right-0 top-0 bg-slate-800 p-1.5 text-slate-400 hover:text-slate-100'>
             <X className='size-5 ' />
           </Dialog.Close>
@@ -61,14 +61,14 @@ export function NoteCard({ note, onNoteDeleted }: NoteCardProps) {
                 onClick={() => { onNoteDeleted(note.id) }}
                 className='w-1/2 bg-slate-800 py-4 text-center text-sm text-slate-300 outline-none font-medium group'
               >
-                <span className='text-red-400 group-hover:underline'>Sim, apagar!</span>
+                <span className='text-red-400 group-hover:underline'>Sim!</span>
               </button>
               <button
                 type='button'
                 onClick={handleDontDeleteNote}
                 className='w-1/2 bg-slate-800 py-4 text-center text-sm text-slate-300 outline-none font-medium group'
               >
-                <span className='text-slate-300 group-hover:underline'>Não, vou manter!</span>
+                <span className='text-slate-300 group-hover:underline'>Não.</span>
               </button>
             </div>
 

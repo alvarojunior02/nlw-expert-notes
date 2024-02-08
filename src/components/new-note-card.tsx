@@ -138,7 +138,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
         <Dialog.Content
           onPointerDownOutside={(event) => { isRecording ? event.preventDefault() : null }}
           onEscapeKeyDown={(event) => { isRecording ? event.preventDefault() : null }}
-          className='fixed overflow-hidden inset-0 md:inset-auto md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[640px] w-full md:h-[60vh] bg-slate-700 md:rounded-md flex flex-col outline-none'
+          className='fixed overflow-hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-[640px] md:w-full w-3/4 h-[75vh] bg-slate-700 rounded-md flex flex-col outline-none'
         >
           <Dialog.Close disabled={isRecording} className={`absolute right-0 top-0 bg-slate-800 p-1.5 text-slate-400 ${!isRecording ? 'hover:text-slate-100' : null} `}>
             <X className='size-5 ' />
@@ -151,9 +151,22 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
               </span>
 
               {shouldShowOnboarding ? (
-                <p className='text-sm leading-6 text-slate-400'>
-                  Comece <button type='button' onClick={handleStartRecording} className='font-medium text-lime-400 hover:underline'>gravando uma nota</button> em áudio ou se preferir <button type='button' onClick={handleStartEditor} className='font-medium text-lime-400 hover:underline'>utilize apenas texto</button>.
-                </p>
+                <div className='flex flex-col gap-3'>
+                  <button
+                    type='button'
+                    onClick={handleStartRecording}
+                    className='font-medium text-slate-50 hover:underline bg-slate-800 p-2 rounded-md'
+                  >
+                    Gravar uma nota
+                  </button>
+                  <button
+                    type='button'
+                    onClick={handleStartEditor}
+                    className='font-medium text-slate-50 hover:underline bg-slate-800 p-2 rounded-md'
+                  >
+                    Usar apenas texto
+                  </button>
+                </div>
               ) : (
                 <textarea
                   autoFocus
