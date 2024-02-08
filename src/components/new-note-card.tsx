@@ -49,6 +49,13 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
 
         toast.success('Nota criada com sucesso!')
       }
+    } else {
+      onNoteCreated(content)
+
+      setContent('')
+      setShouldShowOnboarding(true)
+
+      toast.success('Nota criada com sucesso!')
     }
   }
 
