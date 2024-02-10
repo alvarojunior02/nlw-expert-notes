@@ -20,6 +20,10 @@ Requirements:
 
 ```
 $ cd nlw-expert-notes
+```
+```
 $ npm install
+```
+```
 $ npm run dev
 ```
